@@ -1,17 +1,30 @@
 {
 	"compilerOptions": {
-		"allowJs": false,
-		"declaration": true,
-		"declarationMap": true,
+		/* Base Options: */
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true,
+		"target": "es2022",
+		"verbatimModuleSyntax": true,
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"moduleDetection": "force",
+		"preserveWatchOutput": true,
+		/* Strictness */
+		"strict": true,
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
+		/* If transpiling with TypeScript: */
+		"moduleResolution": "NodeNext",
+		"module": "NodeNext",
+		/* only "es2022" is needed if code doesn't run in the DOM: */
+		"lib": ["es2022", "dom", "dom.iterable", "esnext"],
+		/* Project config: */
+		"declaration": true,
+		"declarationMap": true,
 		"incremental": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"module": "esnext",
-		"moduleResolution": "node",
-		"noEmit": true,
 		"paths": {
 			"@shared/*": ["./src/shared/*"]
 		},
@@ -19,13 +32,7 @@
 			{
 				"name": "next"
 			}
-		],
-		"preserveWatchOutput": true,
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"strictNullChecks": true,
-		"target": "es5"
+		]
 	},
 	"include": ["src", "next-env.d.ts", ".next/types/**/*.ts"],
 	"exclude": ["node_modules"]
